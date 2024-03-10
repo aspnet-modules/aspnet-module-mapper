@@ -1,0 +1,7 @@
+{
+  "src": "./src",
+  "packages": {
+    "AspNet.Module.Mapper.Abstractions": true,
+    "AspNet.Module.Mapper": true
+  }
+}
