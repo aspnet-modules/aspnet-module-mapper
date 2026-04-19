@@ -1,18 +1,18 @@
-# Модуль маппинга
+# AspNet.Module.Mapper
 
-Модуль регистрирует IMapper для маппинга данных.
+Packages for registering `IMapper` and configuring Mapster-based object mapping.
+
+## Installation
 
 ```sh
-# для доступа к IMapper
-dotnet add AspNet.Module.Mapper.Abstractions
+# IMapper abstractions
+dotnet add package AspNet.Module.Mapper.Abstractions
 
-# для регистрации модуля в Host
-dotnet add AspNet.Module.Mapper
+# host integration
+dotnet add package AspNet.Module.Mapper
 ```
 
-## Конфигурация
-
-Создаем конфигурацию от базового класса TypeAdapterConfig
+## Mapper Configuration
 
 ```cs
 public class MapperConfig : TypeAdapterConfig
@@ -24,9 +24,7 @@ public class MapperConfig : TypeAdapterConfig
 }
 ```
 
-## Регистрация модуля с указанной конфигурацией в Program
-
-Добавляем в Host проект nuget пакет `AspNet.Module.Mapper`.
+## Module Registration
 
 ```cs
 using AspNet.Module.Mapper;
@@ -34,3 +32,7 @@ using AspNet.Module.Mapper;
 var builder = AspNetWebApplication.CreateBuilder(args);
 builder.RegisterModule<MapperModule<MapperConfig>>();
 ```
+
+## Source Code
+
+- Repository: [github.com/aspnet-modules/aspnet-module-mapper](https://github.com/aspnet-modules/aspnet-module-mapper)
